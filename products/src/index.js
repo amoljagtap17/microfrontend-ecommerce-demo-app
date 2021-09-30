@@ -8,4 +8,6 @@ for (let i = 0; i < 5; i++) {
   products += `<div>${name}</div>`
 }
 
-console.log('products : ', products)
+// console.log('products : ', products)
+
+document.querySelector('#dev-products').innerHTML = products

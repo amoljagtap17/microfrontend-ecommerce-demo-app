@@ -5,13 +5,14 @@ const { ModuleFederationPlugin } = require('webpack').container
 module.exports = {
   mode: 'development',
   devServer: {
-    port: 8080,
+    port: 8082,
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'container', // name is not used in host module. Only needed for remotes. Usual convention to add 'name'.
-      remotes: {
-        products: 'products@http://localhost:8081/remoteEntry.js',
+      name: 'cart',
+      filename: 'remoteEntry.js',
+      exposes: {
+        './CartShow': './src/index',
       },
     }),
     new HtmlWebpackPlugin({

@@ -14,7 +14,12 @@ module.exports = {
       exposes: {
         './CartShow': './src/index',
       },
-      shared: ['faker'], // these modules are loaded asynchronously within imports in js files
+      // shared: ['faker'], // these modules are loaded asynchronously within imports in js files
+      shared: {
+        faker: {
+          singleton: true, // load only one copy of faker no matter what. If there are difference in major versions different copies would be loaded.
+        },
+      },
     }),
     new HtmlWebpackPlugin({
       template: './public/index.html',

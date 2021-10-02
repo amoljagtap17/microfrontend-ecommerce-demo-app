@@ -14,6 +14,7 @@ module.exports = {
       exposes: {
         './CartShow': './src/index',
       },
+      shared: ['faker'], // these modules are loaded asynchronously within imports in js files
     }),
     new HtmlWebpackPlugin({
       template: './public/index.html',

@@ -12,7 +12,8 @@ module.exports = {
       name: 'cart',
       filename: 'remoteEntry.js',
       exposes: {
-        './CartShow': './src/index',
+        // './CartShow': './src/index',
+        './CartShow': './src/bootstrap',
       },
       // shared: ['faker'], // these modules are loaded asynchronously within imports in js files
       shared: {
